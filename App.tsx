@@ -2,7 +2,7 @@ import React from "react";
 import { CategoriesContextProvider } from "./src/context/Categories.context";
 import { CountryContextProvider } from "./src/context/Country.context";
 import { ThemeContextProvider } from "./src/context/Theme.context";
-
+import { FirstVisitContextProvider } from "./src/context/FirstVisit.context";
 import {
   useFonts,
   Roboto_300Light,
@@ -27,11 +27,13 @@ const App = () => {
 
   return (
     <ThemeContextProvider>
-      <CountryContextProvider>
-        <CategoriesContextProvider>
-          <Routes />
-        </CategoriesContextProvider>
-      </CountryContextProvider>
+      <FirstVisitContextProvider>
+        <CountryContextProvider>
+          <CategoriesContextProvider>
+            <Routes />
+          </CategoriesContextProvider>
+        </CountryContextProvider>
+      </FirstVisitContextProvider>
     </ThemeContextProvider>
   );
 };

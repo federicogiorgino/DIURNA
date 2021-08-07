@@ -21,7 +21,7 @@ export const CountryContextProvider: FC = ({ children }) => {
 
   const loadSelectedCountry = async () => {
     try {
-      const value = await AsyncStorage.getItem(`@COGNI/selectedCountry`);
+      const value = await AsyncStorage.getItem(`@DIURNA-selectedCountry`);
       if (value !== null) {
         setSelectedCountry(JSON.parse(value));
       }
@@ -32,7 +32,7 @@ export const CountryContextProvider: FC = ({ children }) => {
   const saveSelectedCountry = async (value: string) => {
     try {
       const jsonValue = JSON.stringify(value);
-      await AsyncStorage.setItem(`@COGNI/selectedCountry`, jsonValue);
+      await AsyncStorage.setItem(`@DIURNA-selectedCountry`, jsonValue);
     } catch (error) {
       console.log(error);
     }
