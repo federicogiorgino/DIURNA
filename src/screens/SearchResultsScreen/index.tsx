@@ -7,11 +7,12 @@ import Page from "../../components/Page";
 import SafeArea from "../../components/SafeArea";
 
 import { CountryContext } from "../../context/Country.context";
-import { NewsByCategoryContext } from "../../context/NewsByCategory.context";
+import { SearchedNewsContext } from "../../context/SearchedNews.context";
 
 import { styles } from "./styles";
 import { useTheme } from "@react-navigation/native";
 import Row from "../../components/Row";
+import NewsCard from "../../components/NewsCard";
 
 interface SearchResultsScreenProps {
   route: any;
@@ -25,12 +26,11 @@ const SearchResultsScreen: FC<SearchResultsScreenProps> = ({
   const { colors } = useTheme();
   const { category } = route.params;
   const { selectedCountry } = useContext(CountryContext);
-  const { newsByCategory, isLoading, fetchNewsByCategory } = useContext(
-    NewsByCategoryContext
-  );
+  const { searchedNews, isLoading, fetchSearchedNews } =
+    useContext(SearchedNewsContext);
 
   useEffect(() => {
-    fetchNewsByCategory(selectedCountry, category);
+    fetchSearchedNews(category);
   }, [category]);
 
   if (isLoading)
@@ -58,9 +58,10 @@ const SearchResultsScreen: FC<SearchResultsScreenProps> = ({
           />
         </Row>
         <FlatList
-          data={newsByCategory}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
+          data={searchedNews}
+          renderItem={({ item }) => <NewsCard news={item} />}
           keyExtractor={(item) => item.url.toString()}
+          showsVerticalScrollIndicator={false}
         />
       </Page>
     </SafeArea>

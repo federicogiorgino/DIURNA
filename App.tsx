@@ -14,6 +14,8 @@ import {
 import Routes from "./src/navigation/Routes";
 import { HomeNewsContextProvider } from "./src/context/HomeNews.context";
 import { NewsByCategoryContextProvider } from "./src/context/NewsByCategory.context";
+import { BookmarksContextProvider } from "./src/context/Bookmarks.context";
+import { SearchedNewsContextProvider } from "./src/context/SearchedNews.context";
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -30,15 +32,19 @@ const App = () => {
   return (
     <ThemeContextProvider>
       <FirstVisitContextProvider>
-        <CountryContextProvider>
-          <CategoriesContextProvider>
-            <HomeNewsContextProvider>
-              <NewsByCategoryContextProvider>
-                <Routes />
-              </NewsByCategoryContextProvider>
-            </HomeNewsContextProvider>
-          </CategoriesContextProvider>
-        </CountryContextProvider>
+        <BookmarksContextProvider>
+          <CountryContextProvider>
+            <CategoriesContextProvider>
+              <HomeNewsContextProvider>
+                <NewsByCategoryContextProvider>
+                  <SearchedNewsContextProvider>
+                    <Routes />
+                  </SearchedNewsContextProvider>
+                </NewsByCategoryContextProvider>
+              </HomeNewsContextProvider>
+            </CategoriesContextProvider>
+          </CountryContextProvider>
+        </BookmarksContextProvider>
       </FirstVisitContextProvider>
     </ThemeContextProvider>
   );

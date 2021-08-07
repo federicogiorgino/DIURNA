@@ -31,7 +31,7 @@ const OnboardingCountrySettingsScreen: FC<OnboardingCountrySettingsScreenProps> 
 
             <Row>
               <CustomText variant="body">
-                To get the best 'tailored' experience out of DIURNA select a
+                To get the best 'tailored' experience out of this app select a
                 country of interest and its corresponding language.
               </CustomText>
             </Row>

@@ -13,6 +13,7 @@ import { CountryContext } from "../../context/Country.context";
 import { NewsByCategoryContext } from "../../context/NewsByCategory.context";
 
 import { styles } from "./styles";
+import NewsCard from "../../components/NewsCard";
 
 interface ByCategorySearchResultsScreenProps {
   route: any;
@@ -60,8 +61,9 @@ const ByCategorySearchResultsScreen: FC<ByCategorySearchResultsScreenProps> = ({
         </Row>
         <FlatList
           data={newsByCategory}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
+          renderItem={({ item }) => <NewsCard news={item} />}
           keyExtractor={(item) => item.url.toString()}
+          showsVerticalScrollIndicator={false}
         />
       </Page>
     </SafeArea>

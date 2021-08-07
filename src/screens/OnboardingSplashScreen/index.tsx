@@ -41,7 +41,7 @@ const OnboardingSplashScreen: FC<OnboardingSplashScreenProps> = ({
             <Spacer height={40} />
             <View style={{ justifyContent: "center", width: "100%" }}>
               <CustomText variant="title" style={{ textAlign: "center" }}>
-                Welcome to DIURNA
+                Welcome
               </CustomText>
               <Spacer height={20} />
 

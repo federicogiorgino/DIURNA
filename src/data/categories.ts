@@ -9,12 +9,12 @@ export const categories: Category[] = [
   {
     name: "entertainment",
     image:
-      "https://media.istockphoto.com/photos/newspaper-with-the-headline-business-news-picture-id469186784",
+      "https://www.utimaco.com/sites/default/files/2021-03/media-entertainment-stage.jpg",
   },
   {
     name: "general",
     image:
-      "https://media.istockphoto.com/photos/newspaper-with-the-headline-business-news-picture-id469186784",
+      "https://im-media.voltron.voanews.com/Drupal/01live-166/styles/892x501/s3/2020-04/ap_paper.jpg?itok=hD7qVvuw",
   },
   {
     name: "health",

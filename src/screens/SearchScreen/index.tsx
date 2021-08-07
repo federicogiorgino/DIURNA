@@ -27,12 +27,13 @@ const SearchScreen: FC<SearchScreenProps> = ({ navigation }) => {
           <CustomText variant="title">Search</CustomText>
         </Row>
         <Searchbar
-          placeholder="Looking for something specific?"
+          placeholder="Need anything specific?"
           value={query}
           onChangeText={(e) => setQuery(e)}
           onEndEditing={() => {
             if (query === "") return;
             navigation.navigate("SearchResultsScreen", { category: query });
+            setQuery("");
           }}
           autoCapitalize="none"
           autoCorrect={false}
