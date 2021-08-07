@@ -5,10 +5,11 @@ import { MainTabs } from "./Main.tabs";
 import SettingsCountryScreen from "../screens/SettingsCountryScreen";
 import SettingsCategoriesScreen from "../screens/SettingsCategoriesScreen";
 import SearchResultsScreen from "../screens/SearchResultsScreen";
+import { MainStackParams } from "../@types/navigation";
 
 interface MainStackProps {}
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<MainStackParams>();
 
 export const MainStack: FC<MainStackProps> = () => {
   return (

@@ -3,6 +3,8 @@ import { useTheme } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
+import { MainTabsParams } from "../@types/navigation";
+
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import SearchScreen from "../screens/SearchScreen";
@@ -10,7 +12,7 @@ import BookmarksScreen from "../screens/BookmarksScreen";
 
 interface MainTabsProps {}
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialTopTabNavigator<MainTabsParams>();
 
 export const MainTabs: FC<MainTabsProps> = () => {
   const { colors } = useTheme();

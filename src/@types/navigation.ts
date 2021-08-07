@@ -1,23 +1,19 @@
 export type OnboardingStackParams = {
-  OnboardingLanding: { name: string };
-  OnboardingCountrySettings: { name: string };
-  OnboardingCategoriesSettings: { name: string };
+  OnboardingSplashScreen: { name: string };
+  OnboardingCountrySettingsScreen: { name: string };
+  OnboardingCategoriesSettingsScreen: { name: string };
 };
 
-export type AppTabsParams = {
-  Home: { name: string };
-  SearchStack: { name: string };
-  Bookmarks: { name: string };
-  SettingsStack: { name: string };
+export type MainTabsParams = {
+  HomeScreen: { name: string };
+  SearchScreen: { name: string };
+  BookmarksScreen: { name: string };
+  SettingsScreen: { name: string };
 };
 
-//   export type SettingsStackParams = {
-//     Settings: { name: string };
-//     CountryPicker: { name: string };
-//     CategoriesPicker: { name: string };
-//   };
-
-//   export type SearchStackParams = {
-//     Search: { name: string };
-//     SearchResults: { name: string; category: string };
-//   };
+export type MainStackParams = {
+  MainTabs: { name: string };
+  SettingsCountryScreen: { name: string };
+  SettingsCategoriesScreen: { name: string };
+  SearchResultsScreen: { name: string };
+};
