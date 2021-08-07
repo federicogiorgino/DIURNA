@@ -43,7 +43,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
         <Text
           style={[
             {
-              fontFamily: "Regular",
+              fontFamily: "Medium",
               fontSize: 16,
             },
             style,
