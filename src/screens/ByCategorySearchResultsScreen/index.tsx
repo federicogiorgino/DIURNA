@@ -1,24 +1,25 @@
 import React, { FC, useContext, useState } from "react";
+import { useTheme } from "@react-navigation/native";
 import { useEffect } from "react";
 import { ActivityIndicator, Text, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+
 import CenteredPage from "../../components/CenteredPage";
 import Page from "../../components/Page";
 import SafeArea from "../../components/SafeArea";
+import Row from "../../components/Row";
 
 import { CountryContext } from "../../context/Country.context";
 import { NewsByCategoryContext } from "../../context/NewsByCategory.context";
 
 import { styles } from "./styles";
-import { useTheme } from "@react-navigation/native";
-import Row from "../../components/Row";
 
-interface SearchResultsScreenProps {
+interface ByCategorySearchResultsScreenProps {
   route: any;
   navigation: any;
 }
 
-const SearchResultsScreen: FC<SearchResultsScreenProps> = ({
+const ByCategorySearchResultsScreen: FC<ByCategorySearchResultsScreenProps> = ({
   route,
   navigation,
 }) => {
@@ -67,4 +68,4 @@ const SearchResultsScreen: FC<SearchResultsScreenProps> = ({
   );
 };
 
-export default SearchResultsScreen;
+export default ByCategorySearchResultsScreen;

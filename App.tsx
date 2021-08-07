@@ -12,6 +12,8 @@ import {
 } from "@expo-google-fonts/roboto";
 
 import Routes from "./src/navigation/Routes";
+import { HomeNewsContextProvider } from "./src/context/HomeNews.context";
+import { NewsByCategoryContextProvider } from "./src/context/NewsByCategory.context";
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -30,7 +32,11 @@ const App = () => {
       <FirstVisitContextProvider>
         <CountryContextProvider>
           <CategoriesContextProvider>
-            <Routes />
+            <HomeNewsContextProvider>
+              <NewsByCategoryContextProvider>
+                <Routes />
+              </NewsByCategoryContextProvider>
+            </HomeNewsContextProvider>
           </CategoriesContextProvider>
         </CountryContextProvider>
       </FirstVisitContextProvider>

@@ -36,6 +36,8 @@ const CategoryPickerTile: FC<CategoryPickerTileProps> = ({ category }) => {
             style={{
               textTransform: "capitalize",
               marginLeft: 10,
+              fontFamily: "Bold",
+              fontSize: 18,
             }}
           >
             {category.name}

@@ -29,7 +29,15 @@ const SettingScreen: FC<SettingsScreenProps> = ({ navigation }) => {
           onPress={() => navigation.navigate("SettingsCountryScreen")}
         >
           <Row marginVertical={10} paddingVertical={10}>
-            <CustomText variant="body">Change Country</CustomText>
+            <CustomText
+              variant="body"
+              style={{
+                fontFamily: "Bold",
+                fontSize: 18,
+              }}
+            >
+              Change Country
+            </CustomText>
             <MaterialIcons
               name="keyboard-arrow-right"
               size={30}
@@ -42,7 +50,15 @@ const SettingScreen: FC<SettingsScreenProps> = ({ navigation }) => {
           onPress={() => navigation.navigate("SettingsCategoriesScreen")}
         >
           <Row marginVertical={10} paddingVertical={10}>
-            <CustomText variant="body">Edit Categories</CustomText>
+            <CustomText
+              variant="body"
+              style={{
+                fontFamily: "Bold",
+                fontSize: 18,
+              }}
+            >
+              Edit Categories
+            </CustomText>
             <MaterialIcons
               name="keyboard-arrow-right"
               size={30}

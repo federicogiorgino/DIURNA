@@ -15,5 +15,6 @@ export type MainStackParams = {
   MainTabs: { name: string };
   SettingsCountryScreen: { name: string };
   SettingsCategoriesScreen: { name: string };
-  SearchResultsScreen: { name: string };
+  SearchResultsScreen: { name: string; category: string };
+  ByCategorySearchResultsScreen: { name: string; category: string };
 };

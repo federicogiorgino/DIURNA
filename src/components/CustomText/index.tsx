@@ -14,7 +14,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
           style={[
             {
               fontFamily: "Bold",
-              fontSize: 28,
+              fontSize: 30,
             },
             style,
           ]}

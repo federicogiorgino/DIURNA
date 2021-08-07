@@ -10,7 +10,15 @@ const ThemeSwitch = () => {
   const { colors } = useTheme();
   return (
     <Row marginVertical={10} paddingVertical={10}>
-      <CustomText variant="body">Dark Mode</CustomText>
+      <CustomText
+        variant="body"
+        style={{
+          fontFamily: "Bold",
+          fontSize: 18,
+        }}
+      >
+        Dark Mode
+      </CustomText>
       <Switch
         value={isDarkTheme}
         onValueChange={switchTheme}

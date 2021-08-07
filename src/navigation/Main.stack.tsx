@@ -1,11 +1,13 @@
 import React, { FC } from "react";
-
 import { createStackNavigator } from "@react-navigation/stack";
+
 import { MainTabs } from "./Main.tabs";
+import { MainStackParams } from "../@types/navigation";
+
 import SettingsCountryScreen from "../screens/SettingsCountryScreen";
 import SettingsCategoriesScreen from "../screens/SettingsCategoriesScreen";
 import SearchResultsScreen from "../screens/SearchResultsScreen";
-import { MainStackParams } from "../@types/navigation";
+import ByCategorySearchResultsScreen from "../screens/ByCategorySearchResultsScreen";
 
 interface MainStackProps {}
 
@@ -26,6 +28,10 @@ export const MainStack: FC<MainStackProps> = () => {
       <Stack.Screen
         name="SearchResultsScreen"
         component={SearchResultsScreen}
+      />
+      <Stack.Screen
+        name="ByCategorySearchResultsScreen"
+        component={ByCategorySearchResultsScreen}
       />
     </Stack.Navigator>
   );
