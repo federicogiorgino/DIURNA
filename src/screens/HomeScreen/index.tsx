@@ -1,26 +1,33 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useContext } from "react";
 import { useEffect } from "react";
-import { ActivityIndicator, Text, FlatList } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import {
+  ActivityIndicator,
+  StatusBar,
+  FlatList,
+  Dimensions,
+} from "react-native";
+import { useTheme } from "@react-navigation/native";
+
 import CenteredPage from "../../components/CenteredPage";
 import Page from "../../components/Page";
+import HomeNewsCard from "../../components/HomeNewsCard";
 import SafeArea from "../../components/SafeArea";
 
 import { CountryContext } from "../../context/Country.context";
-import { SearchedNewsContext } from "../../context/SearchedNews.context";
-
-import { styles } from "./styles";
-import { useTheme } from "@react-navigation/native";
-import Row from "../../components/Row";
-import NewsCard from "../../components/NewsCard";
 import { HomeNewsContext } from "../../context/HomeNews.context";
 
+import { styles } from "./styles";
+
 interface HomeScreenProps {}
+
+const { height } = Dimensions.get("screen");
 
 const HomeScreen: FC<HomeScreenProps> = ({}) => {
   const { colors } = useTheme();
   const { selectedCountry } = useContext(CountryContext);
   const { isLoading, news, fetchNews } = useContext(HomeNewsContext);
+
+  const FLATLISTSNAPPOINT = height - 80;
 
   useEffect(() => {
     fetchNews(selectedCountry);
@@ -36,14 +43,18 @@ const HomeScreen: FC<HomeScreenProps> = ({}) => {
     );
   return (
     <SafeArea>
-      <Page>
-        <FlatList
-          data={news}
-          renderItem={({ item }) => <NewsCard news={item} />}
-          keyExtractor={(item) => item.url.toString()}
-          showsVerticalScrollIndicator={false}
-        />
-      </Page>
+      {/* <Page> */}
+      <FlatList
+        data={news}
+        renderItem={({ item }) => <HomeNewsCard news={item} />}
+        keyExtractor={(item) => item.url.toString()}
+        showsVerticalScrollIndicator={false}
+        decelerationRate={0}
+        snapToAlignment="center"
+        snapToInterval={FLATLISTSNAPPOINT}
+        scrollEventThrottle={16}
+      />
+      {/* </Page> */}
     </SafeArea>
   );
 };

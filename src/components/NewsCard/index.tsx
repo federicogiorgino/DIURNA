@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
+import { Button, Card } from "react-native-paper";
 import { News } from "../../@types/news";
 import Spacer from "../Spacer";
 import * as WebBrowser from "expo-web-browser";
 import CustomText from "../CustomText";
 import BookmarkButton from "../BookmarkButton";
+import moment from "moment";
 
 interface NewsCardProps {
   news: News;
@@ -21,6 +21,10 @@ const NewsCard: FC<NewsCardProps> = ({ news }) => {
         </CustomText>
         <Spacer height={10} />
         <CustomText variant="paragraph">{news.description}</CustomText>
+        <Spacer height={10} />
+        <CustomText variant="paragraph">
+          {moment(news.publishedAt).fromNow()} - {news.source.name}
+        </CustomText>
       </Card.Content>
       <Card.Actions style={{ justifyContent: "space-between" }}>
         <Button onPress={() => WebBrowser.openBrowserAsync(news.url)}>
@@ -33,5 +37,3 @@ const NewsCard: FC<NewsCardProps> = ({ news }) => {
 };
 
 export default NewsCard;
-
-const styles = StyleSheet.create({});

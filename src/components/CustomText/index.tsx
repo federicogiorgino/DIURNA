@@ -5,8 +5,14 @@ interface CustomTextProps {
   children: ReactNode;
   variant: string;
   style?: Object;
+  numberOfLines?: number;
 }
-const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
+const CustomText: FC<CustomTextProps> = ({
+  children,
+  variant,
+  style,
+  numberOfLines,
+}) => {
   switch (variant) {
     case "title":
       return (
@@ -18,6 +24,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
             },
             style,
           ]}
+          numberOfLines={numberOfLines}
         >
           {children}
         </Text>
@@ -33,6 +40,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
             },
             style,
           ]}
+          numberOfLines={numberOfLines}
         >
           {children}
         </Text>
@@ -48,6 +56,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
             },
             style,
           ]}
+          numberOfLines={numberOfLines}
         >
           {children}
         </Text>
@@ -61,6 +70,7 @@ const CustomText: FC<CustomTextProps> = ({ children, variant, style }) => {
             },
             style,
           ]}
+          numberOfLines={numberOfLines}
         >
           {children}
         </Paragraph>
