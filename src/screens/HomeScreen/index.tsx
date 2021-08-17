@@ -1,15 +1,9 @@
 import React, { FC, useContext } from "react";
 import { useEffect } from "react";
-import {
-  ActivityIndicator,
-  StatusBar,
-  FlatList,
-  Dimensions,
-} from "react-native";
+import { ActivityIndicator, FlatList, Dimensions } from "react-native";
 import { useTheme } from "@react-navigation/native";
 
 import CenteredPage from "../../components/CenteredPage";
-import Page from "../../components/Page";
 import HomeNewsCard from "../../components/HomeNewsCard";
 import SafeArea from "../../components/SafeArea";
 
@@ -43,7 +37,6 @@ const HomeScreen: FC<HomeScreenProps> = ({}) => {
     );
   return (
     <SafeArea>
-      {/* <Page> */}
       <FlatList
         data={news}
         renderItem={({ item }) => <HomeNewsCard news={item} />}
@@ -54,7 +47,6 @@ const HomeScreen: FC<HomeScreenProps> = ({}) => {
         snapToInterval={FLATLISTSNAPPOINT}
         scrollEventThrottle={16}
       />
-      {/* </Page> */}
     </SafeArea>
   );
 };

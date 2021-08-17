@@ -1,33 +1,26 @@
 import React, { FC } from "react";
-import { Dimensions, StatusBar, View } from "react-native";
-import { Button, Card } from "react-native-paper";
-import { News } from "../../@types/news";
-import Spacer from "../Spacer";
 import * as WebBrowser from "expo-web-browser";
+import { View } from "react-native";
+import { Button, Card } from "react-native-paper";
+import moment from "moment";
+
+import Spacer from "../Spacer";
 import CustomText from "../CustomText";
 import BookmarkButton from "../BookmarkButton";
-import moment from "moment";
+
+import { News } from "../../@types/news";
+
+import { styles } from "./styles";
 
 interface HomeNewsCardProps {
   news: News;
 }
 
-const { width, height } = Dimensions.get("screen");
-
 const HomeNewsCard: FC<HomeNewsCardProps> = ({ news }) => {
-  const FLATLISTSNAPPOINT = height - 80;
-
   return (
-    <View
-      style={{
-        height: FLATLISTSNAPPOINT,
-        maxHeight: FLATLISTSNAPPOINT,
-        justifyContent: "center",
-        marginHorizontal: 10,
-      }}
-    >
-      <Card style={{ maxHeight: "90%" }}>
-        <Card.Cover source={{ uri: news.urlToImage }} style={{ height: 350 }} />
+    <View style={styles.cardContainer}>
+      <Card style={styles.card}>
+        <Card.Cover source={{ uri: news.urlToImage }} style={styles.image} />
         <Spacer height={20} />
         <Card.Content>
           <CustomText
